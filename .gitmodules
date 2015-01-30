@@ -1,3 +1,6 @@
 [submodule "ext/sms-tools-ruby"]
 	path = ext/sms-tools-ruby
 	url = https://github.com/nicb/sms-tools-ruby
+[submodule "ext/sms-tools"]
+	path = ext/sms-tools
+	url = https://github.com/MTG/sms-tools
