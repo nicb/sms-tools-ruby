@@ -16,11 +16,11 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "sms-tools-ruby"
   gem.homepage = "http://github.com/nicb/sms-tools-ruby"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "nicb@sme-ccppd.org"
-  gem.authors = ["Nicola Bernardini"]
+  gem.license = "GNU GPL 2.0"
+  gem.summary = %Q{A version of the sms-tools (https://github.com/MTG/sms-tools) (re-written in ruby)}
+  gem.description = %Q{The original package is a sound analysis/synthesis tools for music applications written in python (with a bit of C). This package is an attempt to write a ruby gem that mimicks closely the behaviour of the original python package, though respecting the classical ruby 'convention over configuration' paradigm.}
+  gem.email = "n.bernardini@conservatoriosantacecilia.it"
+  gem.authors = ["Nicola Bernardini, Anna Terzaroli, Giuseppe Silvi"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -48,4 +48,9 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "sms-tools-ruby #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+require "rake/extensiontask"
+Rake::ExtensionTask.new "utilFunctions" do |ext|
+  ext.lib_dir = "lib/sms-tools-ruby/models/util_functions"
 end
