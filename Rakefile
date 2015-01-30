@@ -51,6 +51,6 @@ Rake::RDocTask.new do |rdoc|
 end
 
 require "rake/extensiontask"
-Rake::ExtensionTask.new "utilFunctions" do |ext|
-  ext.lib_dir = "lib/sms-tools-ruby/models/util_functions"
+Rake::ExtensionTask.new "util_functions" do |ext|
+  ext.lib_dir = "ext/util_functions"
 end
