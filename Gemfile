@@ -14,3 +14,4 @@ group :development do
 	gem 'rake-compiler'
 end
 
+gem 'ffi'

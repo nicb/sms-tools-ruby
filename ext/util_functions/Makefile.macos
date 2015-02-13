@@ -1,0 +1,17 @@
+TARGETS= libutilFunctions.$(SUFFIX)
+		 
+OBJECTS= utilFunctions.o
+
+DARWINARCH= -fPIC -arch i386 -arch x86_64
+SUFFIX=dylib
+CFLAGS=$(DARWINARCH) -c -g -Wall
+LDFLAGS=$(DARWINARCH) -bundle -undefined suppress -flat_namespace
+LD=$(CC)
+
+all: $(TARGETS)
+
+$(TARGETS): $(OBJECTS)
+	$(LD) $(LDFLAGS) -o $@ $(OBJECTS) -lm
+
+clean:
+	$(RM) $(OBJECTS) $(TARGETS)
