@@ -46,3 +46,7 @@ build/
 ehthumbs.db
 Thumbs.db
 
+*.dylib
+*.so
+*.o
+*_driver
