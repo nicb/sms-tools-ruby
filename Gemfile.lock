@@ -5,7 +5,6 @@ GEM
     builder (3.2.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    docile (1.1.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
@@ -50,11 +49,6 @@ GEM
       rake
     rdoc (3.12.2)
       json (~> 1.4)
-    simplecov (0.9.1)
-      docile (~> 1.1.0)
-      multi_json (~> 1.0)
-      simplecov-html (~> 0.8.0)
-    simplecov-html (0.8.0)
     thread_safe (0.3.4)
 
 PLATFORMS
@@ -65,6 +59,6 @@ DEPENDENCIES
   ffi
   jeweler (~> 2.0.1)
   minitest
+  multi_json
   rake-compiler
   rdoc (~> 3.12)
-  simplecov
