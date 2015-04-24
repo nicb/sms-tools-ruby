@@ -26,7 +26,7 @@ end
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
+Rake::TestTask.new(:test => :compile) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
@@ -50,7 +50,14 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-require "rake/extensiontask"
-Rake::ExtensionTask.new "util_functions" do |ext|
-  ext.lib_dir = "ext/util_functions"
+EXT_DIR = File.expand_path(File.join('..', 'ext', 'util_functions'), __FILE__)
+
+desc 'compile extensions'
+task :compile do
+  Dir.chdir(EXT_DIR) { system('make')}
+end
+
+desc 'clean compiled extensions'
+task 'compile:clean' do
+  Dir.chdir(EXT_DIR) { system('make clean')}
 end
